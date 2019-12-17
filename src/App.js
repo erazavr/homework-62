@@ -1,26 +1,23 @@
 import React from 'react';
-import logo from './logo.svg';
+import MySite from "./container/MySite/MySite";
+import MyFitstProject from './container/MyFirstProject/MyFirstProject'
+import MySecondProject from './container/MySecondProject/MySecondProject'
+import MyThirdProject from './container/MyThirdProject/MyThirdProject'
+import MyFourthProject from './container/MyFourthProject/MyFourthProject'
+import {BrowserRouter, Route, Switch} from "react-router-dom";
 import './App.css';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
-}
+
+const App = ()=> (
+    <BrowserRouter>
+        <Switch>
+            <Route path='/' exact component={MySite}/>
+            <Route path='/firstProject' component={MyFitstProject}/>
+            <Route path='/secondProject' component={MySecondProject}/>
+            <Route path='/thirdProject' component={MyThirdProject}/>
+            <Route path='/fourthProject' component={MyFourthProject}/>
+        </Switch>
+    </BrowserRouter>
+);
 
 export default App;
